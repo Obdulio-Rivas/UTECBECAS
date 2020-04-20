@@ -1,0 +1,46 @@
+<% //Barra superior en desktop. %>
+<ul class="user-bar">
+    <li>
+        <a href="logout" title="Cerrar Sesion" id="Cerrar Session" class="user-btn modal-confirmar"><i class="fas fa-power-off"></i></a>
+        <a href="#" title="Configuracion" id="Configuracion" class="user-btn"><i class="fas fa-cog"></i></a>
+        <a href="#" title="Usuario" id="Usuario" class="user-button">
+            <i class="fas fa-user"></i>
+            <%
+                var nombres = data_user.Nombre.split(' ')[0];
+                var apellidos = data_user.Apellido.split(' ')[0];
+            %>
+            <span><%= nombres+' '+apellidos %> </span>
+        </a>
+    </li>
+</ul>
+<ul class="menu">
+    <li title="menu"><a href="#" id="menu-button" class="menu-button home fas fa-bars"></a></li>
+    <% if(data_user.Nivel === 1){ %>
+        <li title="Mis Solicitudes"><a href="dashboard" class="list-alt"><span>Mis Solicitudes</span></a></li>
+        <li title="Mi Chequera"><a href="paycheck" class="money-check-alt"><span>Mi Chequera</span></a></li>
+        <li title="Configuracion"><a href="configuration" class="user-cog"><span>Configuracion</span></a></li>
+        <li title="Cerrar Session"><a href="logout" id="Cerrar Sesion" class="power-off modal-confirmar"><span>Cerrar Sesion</span></a></li>
+    <% }else if(data_user.Nivel === 2){ %>
+        <li title="Solicitudes Pendientes"><a href="dashboard" class="list-alt"><span>Solicitudes Pendientes</span></a></li>
+        <li title="Solicitudes Pre-Aprobadas"><a href="pre_approve_list" class="list-alt"><span>Solicitudes Pre-Aprobadas</span></a></li>
+        <li title="Solicitudes Denegadas"><a href="deny_list" class="list-alt"><span>Solicitudes Denegadas</span></a></li>
+        <li title="Solicitudes Aprobadas"><a href="approve_list" class="list-alt"><span>Solicitudes Aprobadas</span></a></li>
+        <li title="Mantenimientos"><a href="maintenance?nav=maintenance" class="cogs"><span>Mantenimientos</span></a></li>
+        <li title="Reportes"><a href="reports?nav=reports" class="report"><span>Reportes</span></a></li>
+        <li title="Configuracion"><a href="configuration" class="user-cog"><span>Configuracion</span></a></li>
+        <li title="Cerrar Session"><a href="logout" id="Cerrar Sesion" class="power-off modal-confirmar"><span>Cerrar Sesion</span></a></li>
+    <% } %>
+</ul>
+<% //Menu movil %>
+<ul class="menu-bar">
+    <li><a href="#" class="menu-button">Menu</a></li>
+    <li><a href="home-applicants:a"><span>Dashboard</span></a></li>
+    <li><a href="home.php?action=apointment"><span>Add Appointment</span></a></li>
+</ul>
+<% //No tocar %>
+<div class="side-view">
+    <ul>
+        <li title="Home"><a href="#" id="menu-button" class="menu-button home fas fa-bars">menu</a></li>
+        <li title="Search"><a href="home.php?action=dashboard" class="search">search</a></li>
+    </ul>
+</div>

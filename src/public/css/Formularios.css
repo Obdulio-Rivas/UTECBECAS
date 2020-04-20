@@ -1,0 +1,139 @@
+/*CSS para formularios basicos*/
+
+.contenedor-form-basico{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.form-basico{
+    widows: 100%;
+    margin: auto;
+    max-width: auto;
+}
+
+.title-form-basico{
+    color: #19A15F;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+
+.input-group{
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.input-form{
+    font-family: monospace;
+    font-size: 16px;
+    margin: auto;
+    color: darkgray;
+    width: 100%;
+    display: block;
+    outline: none;
+    padding: 8px 4px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid gainsboro;
+}
+
+.input-form:placeholder-shown ~ .label-form{
+    color: gray;
+}
+
+.label-form{
+    color: #2A2A2A;
+    font-weight: 600;
+    position: relative;
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.btn-sigle {
+    width: 80%;
+}
+
+/*CSS para formularios de modales.*/
+
+.contenedor-form{
+    width: 100%;
+    margin: auto;
+}
+
+.formulario{
+    widows: 100%;
+    margin: auto;
+    max-width: auto;
+}
+
+.input-group{
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+}
+			
+.input-modal{
+    font-family: monospace;
+    font-size: 16px;
+    margin: auto;
+    color: #000000;
+    width: 90%;
+    display: block;
+    outline: none;
+    padding: 10px 12px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid gainsboro;
+}
+
+.input-modal:active .label, .input-modal:active .label{
+    top: -12px;
+    font-size: 12px;
+    line-height: 12px;
+    outline: none;
+	border-bottom: 2px solid gainsboro;
+}
+
+.input-modal:focus ~ .label{
+    display: block;
+    color: black;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    font-size: 16px;
+    line-height: 16px;
+    margin-left: 14px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.input-modal:placeholder-shown ~ .label{
+    color: transparent;
+}
+
+.label{
+    color: transparent;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 16px;
+    line-height: 16px;
+    margin-left: 16px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}

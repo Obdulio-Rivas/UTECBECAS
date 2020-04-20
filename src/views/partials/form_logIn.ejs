@@ -1,0 +1,47 @@
+<div class="section">
+    <div class="section-row">
+        <div class="section-col hidden-on-movile">
+            <div class="section-item">
+                <div class="img"></div>
+            </div>
+        </div>
+        <div class="section-col">
+            <form action="login"  autocomplete="off" class="form-box" name="formulario_registro" method="POST" autocomplete="off">
+                <div class="input-group">
+                    <div class="items">
+                        <span class="title">Becas UTEC</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="items">
+                        <label class="label text-emphasis-5" for="email">Email:</label>
+                        <input type="mail" class="input" placeholder="Email" id="email" name="email" autocomplete="off">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="items">
+                        <label class="label text-emphasis-5" for="password">Password:</label>
+                        <input type="password" class="input" placeholder="Password" id="password" name="password">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="msg-info">
+                        <% if (typeof info_error !== 'undefined') { %>
+                            <%= info_error%>
+                        <% } %>
+                    </span>
+                </div>
+                <div id="btns-group" class="btns-group">
+                    <div class="container-btns">
+                        <input type="submit" name="submit_login" class="btn" value="Alumno">
+                        <input type="submit" name="submit_login" class="btn" value="Docente">
+                    </div>
+                </div>
+                <div class="footer-form">
+                    <span class="text-emphasis-5">¿Eres Nuevo?</span>
+                    <a href="sign_in">Registrate y aplica es gratis!</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

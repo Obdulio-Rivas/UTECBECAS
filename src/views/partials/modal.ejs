@@ -1,0 +1,138 @@
+<!-- Modal Confirmar Accion -->
+<div class="window-modal" id="modal-confirmar">
+    <div class="modal-box">
+        <header class="modal-header">
+            <span><i class="fas fa-check titulo-modal"></i></span>
+        </header>
+        <div class="modal-content">
+            <div class="contenedor-form">
+                <div class="wrap">
+                    <div>
+                        <p class="info-modal"></p>
+                    </div>
+                    <div id="modal-btns" class="modal-btns">
+                        <a id="confirmar" href="#" class="btn-modal">Aceptar</a>
+                        <a style="color: white;" href="#" class="btn-cancel">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Ajustes de usuario -->
+<div class="window-modal" id="modal-User-Seting">
+    <div id="confirm-User-Seting" class="modal-box">
+        <header class="modal-header">
+            <span><i class="fas fa-cog"></i> Ajustes de Usuario.</span>
+        </header>
+        <div class="modal-content">
+            <div class="contenedor-form">
+                <div class="wrap">	
+                    <form action="user_settings" name="abrir" method="POST" autocomplete="off">
+                        <div class="modal-sections">
+                            <div class="section-1">
+                                <div class="items">
+                                    <p class="info-modal"></p>
+                                </div>
+                            </div>
+                            <div class="section-3">
+                                <div class="items">
+                                    <label class="label">Contraseña Actual:</label>
+                                    <input type="password" class="input" name="pwr_old" placeholder="Constraseña Actual" required>
+                                </div>
+                                <div class="items">
+                                    <label class="label">Contraseña Nueva:</label>
+                                    <input type="password" class="input" name="pwr_new" placeholder="Constraseña Nueva" value="" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <input type="hidden" class="input-modal" id="accion" name="accion" value="savesettings">
+                                <input type="hidden" class="input-modal" id="panel" name="panel" value="<%- panel%>">
+                            </div>
+                        </div>
+                        <div id="modal-btns" class="modal-btns">
+                            <input type="submit" class="btn-modal" value="Aceptar">
+                            <a id="User-Seting" style="color: white;" class="btn-cancel">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Modal General de Reportes -->
+<div class="window-modal" id="modal-report">
+    <div id="confirm-report" class="modal-box">
+        <header class="modal-header">
+            <span><i class="fas fa-sign-out-alt"></i> Generar Reporte.</span>
+        </header>
+        <div class="modal-content">
+            <div class="contenedor-form">
+                <div class="wrap">	
+                    <form action="report" name="report" method="POST" autocomplete="off">
+                            <div class="modal-sections">
+                                <div class="section-1">
+                                    <div class="items">
+                                        <p class="info-modal"></p>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="hidden" class="input-modal" id="name_report" name="type_report" value="">
+                                    <input type="hidden" class="input-modal" id="order_by" name="order_by" value="">
+                                </div>
+                            </div>
+                        <div id="modal-btns" class="modal-btns">
+                            <input type="submit" class="btn-modal" value="Aceptar">
+                            <a id="report" style="color: white;" class="btn-cancel">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Modal General de Reportes Dates-->
+<div class="window-modal" id="modal-report-dates">
+    <div id="confirm-report-dates" class="modal-box">
+        <header class="modal-header">
+            <span><i class="fas fa-sign-out-alt"></i> Generar Reporte.</span>
+        </header>
+        <div class="modal-content">
+            <div class="contenedor-form">
+                <div class="wrap">	
+                    <form action="report" name="report" method="POST" autocomplete="off">
+                            <div class="modal-sections">
+                                <div class="section-1">
+                                    <div class="items">
+                                        <p class="info-modal"></p>
+                                    </div>
+                                </div>
+                                <div class="section-3">
+                                    <div class="items">
+                                        <label class="label">Fecha inicial:</label>
+                                        <input type="date" class="input" id="date_start" name="date_start" value="">
+                                    </div>
+                                    <div class="items">
+                                        <label class="label">Fecha final:</label>
+                                        <input type="date" class="input" id="date_end" name="date_end" value="">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="hidden" class="input-modal" id="name_report" name="type_report" value="">
+                                    <input type="hidden" class="input-modal" id="order_by" name="order_by" value="">
+                                </div>
+                            </div>
+                        <div id="modal-btns" class="modal-btns">
+                            <input type="submit" class="btn-modal" value="Aceptar">
+                            <a id="report-dates" style="color: white;" class="btn-cancel">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

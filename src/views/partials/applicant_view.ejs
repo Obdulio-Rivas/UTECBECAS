@@ -1,0 +1,483 @@
+<div class="dashboard-box">
+    <div class="box-items">
+        <div class="applicant-view">
+            <div class="cover-photo">
+                <img class="cover-effect" src="../assets/COVER-UTEC.jpg" alt="Cover-image" />
+            </div>
+            <div class="img-container">
+                <img class="img-profile" src="<%- imageTest %> " alt="">
+            </div>
+            <div class="content">
+                <div class="info-block-parts">
+                    <div class="block-part">
+                        <span class="etiqueta"><%- filas[0].Nombre %> </span>
+                        <br>
+                        <span class="etiqueta"><%- filas[0].Apellido %> </span>
+                    </div>
+                    <span class="divider-line"></span>
+                    <div class="block-part">
+                        <a href="#" id="block_part_1" class="controler-content controler-content-activated">Datos Personales.</a>
+                        <a href="#" id="block_part_2"class="controler-content">Datos de los Padres.</a>
+                        <a href="#" id="block_part_3"class="controler-content">Datos Laborales.</a>
+                        <a href="#" id="block_part_4"class="controler-content">Estudios Realizados.</a>
+                    </div>
+                </div>
+                <div class="info-block-content">
+                    <div id="content_block_part_1" class="block-content">
+                        <span class="title-content">Datos Personales.</span>
+                        <span class="divider-line"></span>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Nombres:</span>
+                                <span class="info-etiqueta"><%- filas[0].Nombre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Apellidos:</span>
+                                <span class="info-etiqueta"><%- filas[0].Apellido %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Carnet:</span>
+                                <span class="info-etiqueta"># <%- filas[0].Carnet %> </span>
+                            </div>
+                            <div class="block-4">
+                                <span class="etiqueta">Edad:</span>
+                                <span class="info-etiqueta"><%- filas[0].Edad %> </span>
+                            </div>
+                            <div class="block-4">
+                                <span class="etiqueta">Sexo:</span>
+                                <% if (filas[0].Sexo===1) { %>
+                                    <span class="info-etiqueta">Masculino</span>
+                                <% }else{%>
+                                    <span class="info-etiqueta">Femenino</span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Fecha de Nacimiento:</span>
+                                <span class="info-etiqueta"><%- filas[0].FechaNacimiento %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Carrera:</span>
+                                <span class="info-etiqueta"><%- filas[0].nombre_carrera %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Email:</span>
+                                <span class="info-etiqueta"><%- filas[0].Email %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Ciclo al que Aplica:</span>
+                                <span class="info-etiqueta"><%- filas[0].Ciclo_a_aplicar %>° Ciclo</span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">DUI:</span>
+                                <span class="info-etiqueta">#<%- filas[0].DUI %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">NIT:</span>
+                                <span class="info-etiqueta">#<%- filas[0].NIT %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-1">
+                                <span class="etiqueta">Direccion:</span>
+                                <span class="info-etiqueta"><%- filas[0].Direccion %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-3">
+                                <span class="etiqueta">Telefono:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono %> </span>
+                            </div>
+                            <div class="block-3">
+                                <span class="etiqueta">Celular:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono %> </span>
+                            </div>
+                            <div class="block-3">
+                                <span class="etiqueta">Tipo de Contrato:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-3">
+                                <span class="etiqueta">Estado Civil:</span>
+                                <% if (filas[0].Estado_civil===1) { %>
+                                    <span class="info-etiqueta">Soltero.</span>
+                                <% }else if(filas[0].Estado_civil===2){%>
+                                    <span class="info-etiqueta">Casado</span>
+                                <% }else{%>
+                                    <span class="info-etiqueta">Divorciado</span>
+                                <% } %>
+                            </div>
+                            <div class="block-3">
+                                <span class="etiqueta">Cantidad de Hijos:</span>
+                                <span class="info-etiqueta"><%- filas[0].N_de_hijos %> </span>
+                            </div>
+                            <div class="block-3">
+                                <span class="etiqueta">Vive en casa:</span>
+                                <% if (filas[0].Tipo_casa===1) { %>
+                                    <span class="info-etiqueta">Propia</span>
+                                <% }else if(filas[0].Tipo_casa===2){%>
+                                    <span class="info-etiqueta">Alquilada</span>
+                                <% }else{%>
+                                    <span class="info-etiqueta">No Especifico</span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-3">
+                                <span class="etiqueta">CUM General:</span>
+                                <span class="info-etiqueta"><%- filas[0].CUM[0] %> </span>
+                            </div>
+                            <div class="block-3">
+                                    <span class="etiqueta">Rubro al que Aplica:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Nombre_Rubro %> </span>
+                                </div>
+                            <div class="block-3">
+                                <span class="etiqueta">Solicitante Vive con:</span>
+                                <% if (filas[0].Con_quien_vive===1) { %>
+                                    <span class="info-etiqueta">Padre</span>
+                                <% }else if (filas[0].Con_quien_vive===2) { %>
+                                    <span class="info-etiqueta">Madre</span>
+                                <% }else if (filas[0].Con_quien_vive===3) { %>
+                                    <span class="info-etiqueta">Padre y Madre</span>
+                                <% }else if (filas[0].Con_quien_vive===4) { %>
+                                    <span class="info-etiqueta">Hermano/a</span>
+                                <% }else if (filas[0].Con_quien_vive===5) { %>
+                                    <span class="info-etiqueta">Independiente</span>
+                                <% }else if (filas[0].Con_quien_vive===6) { %>
+                                    <span class="info-etiqueta">Conyuge</span>
+                                <% }else if (filas[0].Con_quien_vive===7) { %>
+                                    <span class="info-etiqueta">Pupilaje</span>
+                                <% }else if (filas[0].Con_quien_vive===8) { %>
+                                    <span class="info-etiqueta">Otros Familiares</span>
+                                <% }else{%>
+                                    <span class="info-etiqueta">No Especifico</span>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Adjunto Constancia:</span>
+                                <% if (filas[0].Tipo_casa!=="") { %>
+                                    <span class="info-etiqueta"><a href="" target="blank"> Constancia Adjunta</a></span>
+                                <% }else{%>
+                                    <span class="info-etiqueta">No Adjunto</span>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content_block_part_2" class="block-content block-content-none">
+                        <span class="title-content">Datos de los Padres.</span>
+                        <span class="divider-line"></span>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Nombre del Padre:</span>
+                                <span class="info-etiqueta"><%- filas[0].Nombre_del_padre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Celular:</span>
+                                <span class="info-etiqueta"><%- filas[0].Celular_padre %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Telefono:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono_residencia_padre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Trabajo:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono_trabajo_padre %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Profesion del Padre:</span>
+                                <span class="info-etiqueta"><%- filas[0].Profesion_padre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Lugar del Trabajo:</span>
+                                <span class="info-etiqueta"><%- filas[0].Lugar_trabajo_padre %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Nombre de la Madre:</span>
+                                <span class="info-etiqueta"><%- filas[0].Nombre_de_la_madre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Celular:</span>
+                                <span class="info-etiqueta"><%- filas[0].Celular_madre %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Telefono:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono_residencia_madre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Numero de Trabajo:</span>
+                                <span class="info-etiqueta"><%- filas[0].Telefono_trabajo_madre %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Profesion del Padre:</span>
+                                <span class="info-etiqueta"><%- filas[0].Profesion_madre %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Lugar del Trabajo:</span>
+                                <span class="info-etiqueta"><%- filas[0].Lugar_trabajo_madre %> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content_block_part_3" class="block-content block-content-none">
+                        <span class="title-content">Datos Laborales.</span>
+                        <span class="divider-line"></span>
+                        <% if (filas[0].Trabaja === 1) { %>
+                            <div class="blocks-row">
+                                <div class="block-2">
+                                    <span class="etiqueta">Lugar de Trabajo:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Lugar_de_trabajo %> </span>
+                                </div>
+                                <div class="block-2">
+                                    <span class="etiqueta">Numero de Celular:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Celular_empresa %> </span>
+                                </div>
+                            </div>
+                            <div class="blocks-row">
+                                <div class="block-2">
+                                    <span class="etiqueta">Tiempo de Trabajar:</span>
+                                    <%
+                                    var tiempo_t = filas[0].Tiempo_de_trabajo_empresa;
+                                    if(tiempo_t ==="1") { %>
+                                        <span class="info-etiqueta">Menos de un Año</span>
+                                    <% }else  if(tiempo_t ==='2'){ %>
+                                        <span class="info-etiqueta">Mas de un Año</span>
+                                    <% }else  if(tiempo_t ==='3'){ %>
+                                        <span class="info-etiqueta">Entre un Año y Dos</span>
+                                    <% }else  if(tiempo_t ==='4'){ %>
+                                        <span class="info-etiqueta">Mas de dos Años</span>
+                                    <% }else  if(tiempo_t ==='5'){ %>
+                                        <span class="info-etiqueta">Entre dos Años y Tres</span>
+                                    <% }else  if(tiempo_t ==='6'){ %>
+                                        <span class="info-etiqueta">Mas de Tres Años</span>
+                                    <% }else  if(tiempo_t ==='7'){ %>
+                                        <span class="info-etiqueta">Entre tres Años y Cuatro</span>
+                                    <% }else  if(tiempo_t ==='8'){ %>
+                                        <span class="info-etiqueta">Mas de Cuatro Años</span>
+                                    <% }else  if(tiempo_t ==='9'){ %>
+                                        <span class="info-etiqueta">Entre cuatro Años y Cinco</span>
+                                    <% }else  if(tiempo_t ==='10'){ %>
+                                        <span class="info-etiqueta">Mas de Cinco Años</span>
+                                    <% }else{ %>
+                                        <span class="info-etiqueta">No Especifico.</span>
+                                    <% } %>
+                                </div>
+                                <div class="block-2">
+                                    <span class="etiqueta">Numero de Telefono:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Telefono_Trabajo %> </span>
+                                </div>
+                            </div>
+                            <div class="blocks-row">
+                                <div class="block-2">
+                                    <span class="etiqueta">Cargo:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Cargo_que_desempena %> </span>
+                                </div>
+                                <div class="block-2">
+                                    <span class="etiqueta">Salario Actual:</span>
+                                    <%
+                                    var Salario_actual = filas[0].Salario_actual;
+                                    if(Salario_actual ===1) { %>
+                                        <span class="info-etiqueta">Menos de $100 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===2){ %>
+                                        <span class="info-etiqueta">Mas de $100 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===3){ %>
+                                        <span class="info-etiqueta">Menos de $200 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===4){ %>
+                                        <span class="info-etiqueta">Mas de $200 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===5){ %>
+                                        <span class="info-etiqueta">Menos de $300 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===6){ %>
+                                        <span class="info-etiqueta">Mas de $300 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===7){ %>
+                                        <span class="info-etiqueta">Menos de $400 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===8){ %>
+                                        <span class="info-etiqueta">Mas de $400 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===9){ %>
+                                        <span class="info-etiqueta">Menos de $500 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===10){ %>
+                                        <span class="info-etiqueta">Mas de $500 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===11){ %>
+                                        <span class="info-etiqueta">Menos de $600 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===12){ %>
+                                        <span class="info-etiqueta">Mas de $600 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===13){ %>
+                                        <span class="info-etiqueta">Menos de $700 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===14){ %>
+                                        <span class="info-etiqueta">Mas de $700 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===15){ %>
+                                        <span class="info-etiqueta">Menos de $800 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===16){ %>
+                                        <span class="info-etiqueta">Mas de $800 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===17){ %>
+                                        <span class="info-etiqueta">Menos de $900 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===18){ %>
+                                        <span class="info-etiqueta">Mas de $900 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===19){ %>
+                                        <span class="info-etiqueta">Menos de $1000 Mensuales.</span>
+                                    <% }else  if(Salario_actual ===20){ %>
+                                        <span class="info-etiqueta">Mas de $1000 Mensuales.</span>
+                                    <% }else{ %>
+                                        <span class="info-etiqueta">No Especifico.</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="blocks-row">
+                                <div class="block-2">
+                                    <span class="etiqueta">Nombre del Jefe:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Nombre_jefe %> </span>
+                                </div>
+                                <div class="block-2">
+                                    <span class="etiqueta">Telefono Jefe:</span>
+                                    <span class="info-etiqueta"><%- filas[0].Telefono_jefe %> </span>
+                                </div>
+                            </div>
+                        <% }else{ %>
+                                <div class="blocks-row">
+                                    <div class="block-2">
+                                        <span class="etiqueta">Aplicante indico que no Trabaja.</span>
+                                    </div>
+                                </div>
+                        <% } %>
+                    </div>
+                    <div id="content_block_part_4" class="block-content block-content-none">
+                        <span class="title-content">Estudios Realizados.</span>
+                        <span class="divider-line"></span>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Educacion Basico:</span>
+                                <span class="info-etiqueta"><%- filas[0].Educacion_Basico %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Bachillerato:</span>
+                                <span class="info-etiqueta"><%- filas[0].Bachillerato %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Tecnico:</span>
+                                <span class="info-etiqueta"><%- filas[0].Tecnico %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Grado Universitario:</span>
+                                <span class="info-etiqueta"><%- filas[0].Grado_Universitario %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Post Grado:</span>
+                                <span class="info-etiqueta"><%- filas[0].Post_grado %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Maestria:</span>
+                                <span class="info-etiqueta"><%- filas[0].Maestria %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Post Grado:</span>
+                                <span class="info-etiqueta"><%- filas[0].Post_grado %> </span>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Maestria:</span>
+                                <span class="info-etiqueta"><%- filas[0].Maestria %> </span>
+                            </div>
+                        </div>
+                        <div class="blocks-row">
+                            <div class="block-2">
+                                <span class="etiqueta">Medio de Transporte:</span>
+                                <%
+                                var medio_trans = filas[0].Medio_de_transporte;
+                                if (medio_trans === 1) {%>
+                                    <span class="info-etiqueta">Vehiculo Propio.</span>
+                                <%}else if (medio_trans === 2) {%>
+                                    <span class="info-etiqueta">Motocicleta.</span>
+                                <%}else if (medio_trans === 3) {%>
+                                    <span class="info-etiqueta">Transporte Publico.</span>
+                                <%}else if (medio_trans === 4) {%>
+                                    <span class="info-etiqueta">Transporte Privado.</span>
+                                <%}else if (medio_trans === 5) {%>
+                                    <span class="info-etiqueta">Ninguno.</span>
+                                <%}else{%>
+                                    <span class="info-etiqueta">No Especifico.</span>
+                                <%}%>
+                            </div>
+                            <div class="block-2">
+                                <span class="etiqueta">Aplica a Beca:</span>
+                                <span class="info-etiqueta"><%- filas[0].Nombre_Rubro %> </span>
+                            </div>
+                        </div>
+                        <% if (filas[0].Serevicio_social) {%>
+                            <div class="blocks-row">
+                                <div class="block-1">
+                                    <span class="etiqueta">Cantidad de Horas Sociales:</span>
+                                    <%
+                                    var horas_sociales = filas[0].Horas_sociales_realizadas;
+                                    if(horas_sociales ===1) { %>
+                                        <span class="info-etiqueta">Menos de 100 horas</span>
+                                    <% }else  if(horas_sociales ===2){ %>
+                                        <span class="info-etiqueta">Mas de 100 horas</span>
+                                    <% }else  if(horas_sociales ===3){ %>
+                                        <span class="info-etiqueta">Menos de 200 horas</span>
+                                    <% }else  if(horas_sociales ===4){ %>
+                                        <span class="info-etiqueta">Mas de 200 horas</span>
+                                    <% }else  if(horas_sociales ===5){ %>
+                                        <span class="info-etiqueta">Menos de 300 horas</span>
+                                    <% }else  if(horas_sociales ===6){ %>
+                                        <span class="info-etiqueta">Mas de 300 horas</span>
+                                    <% }else  if(horas_sociales ===7){ %>
+                                        <span class="info-etiqueta">Menos de 400 horas</span>
+                                    <% }else  if(horas_sociales ===8){ %>
+                                        <span class="info-etiqueta">Mas de 400 horas</span>
+                                    <% }else  if(horas_sociales ===9){ %>
+                                        <span class="info-etiqueta">Menos de 500 horas</span>
+                                    <% }else  if(horas_sociales ===10){ %>
+                                        <span class="info-etiqueta">Mas de 500 horas</span>
+                                    <% }else{ %>
+                                        <span class="info-etiqueta">No Especifico.</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <%}else{%>
+                            <div class="blocks-row">
+                                <div class="block-1">
+                                    <span class="etiqueta">El aplicante indico, que no ha realizado servicio social aun.</span>
+                                </div>
+                            </div>
+                        <%}%>
+                    </div>
+                    <div class="controles-view">
+                        <a href="#" id="back_button">Regresar</a>
+                        <%if(data_user.Nivel === 2){%>
+                            <%if (filas[0].Estado[1] === 1) {%>
+                                <a id="deny-view" class="deny-view" href="applicant_view_action?id=<%- filas[0].IDformulario %>,action=deny"><i id="<%- filas[0].IDformulario %>"></i>Denegar</a>
+                                <a id="approve-view" class="approve-view" href="applicant_view_action?id=<%- filas[0].IDformulario %>,action=approve"><i id="<%- filas[0].IDformulario %>"></i>Aprobar</a>
+                            <%}else if (filas[0].Estado[1] === 2) {%>
+                                <a id="deny-view" class="deny-view" href="applicant_view_action?id=<%- filas[0].IDformulario %>,action=deny"><i id="<%- filas[0].IDformulario %>"></i>Denegar</a>
+                            <%} else {%>
+                                <a id="approve-view" class="approve-view" href="applicant_view_action?id=<%- filas[0].IDformulario %>,action=approve"><i id="<%- filas[0].IDformulario %>"></i>Aprobar</a>
+                            <%}%>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

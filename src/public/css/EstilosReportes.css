@@ -1,0 +1,76 @@
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+:root{
+    --main-color: rgb(171, 15, 30);
+    --main-hover-color: rgb(148, 15, 28);
+    --dashboard-bg: #F2F3F4;
+    --black: black;
+    --legend: rgb(150, 150, 150);
+    --tipograpy-1: #172951;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: auto;
+    width: 100%;
+}
+
+.reporte{
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+.titulo-reporte{
+    display: block;
+    font-size: 1.8em;
+}
+
+.tabla-reporte{
+    width: 100%;
+}
+
+.tabla-reporte > thead > tr{
+    width: 100%;
+}
+
+.tabla-reporte > thead > tr > th{
+    color: var(--tipograpy-1);
+    font-weight: 600;
+    padding: 5px;
+    text-align: left;
+}
+
+.tabla-reporte > tbody > tr > td{
+    color: #172951;
+    font-weight: 400;
+    font-size: 12PX;
+    border: 1px solid #444;
+}
+
+.tabla-reporte > tbody > tr{
+    background: var(--legend);
+    color: #be0808;
+}
+
+.celda_centrada{
+    text-align: center;
+}
+
+.marcar > span{
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.marca_aprobado{
+    color: #08be3f;
+}
+
+.marca_denegado{
+    color: #be0808;
+}

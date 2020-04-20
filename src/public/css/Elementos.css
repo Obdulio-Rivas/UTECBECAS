@@ -1,0 +1,51 @@
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+:root{
+  --main-color: rgb(171, 15, 30);
+  --main-hover-color: rgb(148, 15, 28);
+  --dashboard-bg: white;
+  --black: black;
+  --legend: rgb(150, 150, 150);
+}
+
+/*Boton flotante del Sistema.*/
+.btn-float > a{
+    width: 8vh;
+    height: 8vh;
+    position:fixed;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    right:0px;
+    bottom:0px;
+    border-radius: 50%;
+    background: var(--main-color);
+    border: 1px solid var(--main-hover-color);
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+    text-decoration: none; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition:.3s all;
+}
+
+.btn-float a i{
+    color: white;
+    font-size: calc(100vh*0.04);
+}
+
+.btn-float > a:hover{
+    width: 8.5vh;
+    height: 8.5vh;
+    background: var(--main-color);
+    border: 1px solid var(--main-hover-color);
+    transform: rotate(180deg);
+    text-decoration: none;
+    font-style: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+}
+
+.btn-float > a:hover i{
+    color: white;
+}
+
+/*--------------------------------------*/

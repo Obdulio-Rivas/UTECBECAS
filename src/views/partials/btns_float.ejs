@@ -1,0 +1,11 @@
+<% if (data_user.Nivel === 1) {
+    var num_rows = filas.length-2;
+    var status_aplicacion = filas[num_rows].Estado_Aplicacion;
+    if (status_aplicacion===3) {%>
+        <div class="btn-float">
+            <a id="" href="add_applicant">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+    <%}%>
+<%}%>

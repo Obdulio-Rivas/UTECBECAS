@@ -1,0 +1,126 @@
+:root{
+    --main-color: rgb(171, 15, 30);
+    --main-hover-color: rgb(148, 15, 28);
+    --dashboard-bg: #F2F3F4;
+    --black: black;
+    --legend: rgb(150, 150, 150);
+    --tipograpy-1: #172951;
+}
+
+.window-modal{
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    display: none;
+    position: fixed;
+    background-color: rgba(31, 30, 30, 0.9);
+}
+
+.modal-box {
+    overflow: hidden;
+    width: 90%;
+    max-width: 500px;
+    display: block;
+    padding: 0;
+    margin: auto;
+    margin-top: calc(65vh/2);
+    border-radius: 0.65em;
+    background: white;
+    transition: transform 200ms;
+}
+
+.modal-box {
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal-header span{
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-header{
+    padding: 1em;
+    background-color: var(--main-hover-color);
+}
+
+.modal-content{
+    padding: 1em;
+    color: rgb(70, 70, 70);
+    border-radius: 0px;
+    text-align: justify;
+    margin: 0px;
+    background-color: #fff;
+}
+
+.modal-sections{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding-bottom: 0.5em;
+}
+
+.section-1 .items .input,
+.section-2 .items .input,
+.section-3 .items .input,
+.section-4 .items .input,
+.section-5 .items .input,
+.section-4 .items-ai .input{
+    background: transparent;
+    border: 2px solid #BDBDBD;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.modal-sections .section-3,
+.modal-sections .section-4,
+.modal-sections .section-5{
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.modal-sections .section-3 .items{
+    width: 45%;
+ }
+ 
+ .modal-sections .section-4 .items{
+     width: 30%;
+ }
+ 
+ .modal-sections .section-5 .items{
+     width: 20%;
+ }
+
+.modal-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-modal, .btn-cancel{
+    clear: both;
+    width: calc(100%*0.25);
+    max-width: 200px;
+    min-width: 150px;
+    background: var(--main-color);
+    color: #fff;
+    font-size: 0.9em;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    text-decoration: none;
+  }

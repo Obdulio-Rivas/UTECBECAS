@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  background: #F2F3F4;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  font-size: 16px;
+}
+
+.wrapper{
+  width: 100%;
+  padding: 10px;
+}
+
+.container{
+  max-width: 82vw;
+  height: auto;
+  margin: 20px auto;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px 40px 30px;
+  border: 5px;
+  border-top: 7px solid #741313;
+}
+
+.title{
+  color: #741313;
+  font-size: 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.input-form-title{
+  color: white;
+  padding: 10px;
+  font-size: 1.5em;
+  background: #741313;
+  margin: 12px auto;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.legend{
+  display: block;
+  color: white;
+  padding: 10px;
+  font-size: 0.6em;
+  font-family: sans-serif;
+}
+
+.input-form{
+  margin-bottom: 20px;
+}
+
+.input-form .label{
+	display: block;
+  font-size: 1em;
+  color: #212121;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.input-form .items,
+.input-form .items-ai{
+  margin-bottom: 20px;
+}
+
+.section-1 .items .input,
+.section-2 .items .input,
+.section-3 .items .input,
+.section-4 .items .input,
+.section-5 .items .input,
+.section-4 .items-ai .input{
+    background: transparent;
+    border: 2px solid #BDBDBD;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.input-form .section-3,
+.input-form .section-4,
+.input-form .section-5{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-form .section-3 .items{
+   width: 45%;
+}
+
+.input-form .section-4 .items{
+    width: 30%;
+}
+
+.input-form .section-5 .items{
+    width: 20%;
+}
+
+.input-form .section-4 .items-ai{
+  width: calc(100%*0.65);
+}
+
+.container-btns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  width: calc(100%*0.25);
+  max-width: 200px;
+  min-width: 150px;
+  background: #741313;
+  color: #fff;
+  font-size: 1em;
+	padding: 10px 0;
+  text-align: center;
+	text-transform: uppercase;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.cvc{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cvc .tooltip{
+  color: #d4d4d4;
+  border: 2px solid #d4d4d4;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align:center;
+  cursor: pointer;
+}
+
+.tooltip::after{
+  padding: 10px;
+  color: #000;
+}
+
+.cvc .cvc-img{
+  position: absolute;
+  top: -300%;
+  right: 0;
+  background: #5f6c7d;
+  padding: 12px;
+  border-radius: 5px;
+  display: none;
+}
+
+.cvc .cvc-img img{
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.cvc:hover .cvc-img{
+  display: block;
+}
+
+.cvc .cvc-img p{
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1.1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #811616;
+  border-color: #741313;
+  color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+.list-checkbox{
+  padding: 10px 0px;
+}
+
+.list-checkbox > p{
+  font-size: 1.1em;
+  color: #212121;
+  margin-bottom: 10px;
+}
+
+.list-checkbox-inline{
+  padding: 10px 0px;
+}
+
+.list-checkbox-inline p{
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  margin-top: 0px;
+}
+
+.list-checkbox-inline div{
+  padding-top: 10px;
+  display: inline;
+}
+
+.label-checkbox{
+  font-size: 0.98em;
+  color: #3d444d;
+}
+
+.divider{
+  background-color: #fff;
+  margin: 7px 5px;
+	border-top: 2px dashed #741313;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #741313;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+@media screen and (max-width: 460px){
+
+  .container{
+    max-width: 95vw;
+  }
+
+  .input-form .section-3,
+  .input-form .section-4,
+  .input-form .section-5{
+    flex-direction: column;
+  }
+  .input-form .section-3 .items,
+  .input-form .section-4 .items,
+  .input-form .section-5 .items,
+  .input-form .section-4 .items-ai{
+     width: 100%;
+  }
+  .input-form .items{
+    margin-bottom: 10px;
+  }
+
+  .input-form{
+    margin-bottom: 15px;
+  }
+  .title{
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .input-form-title{
+    font-size: 1em;
+  }
+
+  .container-btns{
+    display: block;
+  }
+
+  .btn{
+    display: block;
+    min-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .btn:last-child{
+    margin-bottom: 0px;
+  }
+
+}

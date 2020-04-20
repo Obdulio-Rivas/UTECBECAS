@@ -1,0 +1,161 @@
+<% if ((filas.length-1)>0){%>
+    <div class="dashboard-box">
+        <div class="box-items">
+            <span class="title-box">Mis Aplicaciones a Beca.</span>
+            <div class="controlers-table">
+                <div>
+                    <form action="dashboard" method="POST" class="form-controler">
+                        <%if (configuracion_lista.filtro_tabla==="Estado") {%>
+                            <div class="items">
+                                <label class="label">Estado:</label>
+                                <select class="input" name="filtro_valor">
+                                    <option selected value="0">Seleccione una Opcion</option>
+                                    <option value="1">Pendiente</option>
+                                    <option value="2">Pre Aprobada</option>
+                                    <option value="3">Denegada</option>
+                                    <option value="4">Aprobada</option>
+                                </select>
+                                <input type="hidden" class="input" name="filtro_tabla" value="<%- configuracion_lista.filtro_tabla %>">
+                            </div>
+                        <%}else if (configuracion_lista.filtro_tabla==="Nombre_Rubro") {%>
+                            <div class="items">
+                                <label class="label">Rubro:</label>
+                                <select class="input" name="filtro_valor">
+                                    <option selected value="0">Seleccione una Opcion</option>
+                                    <option value="1">Academica</option>
+                                    <option value="2">Fundadores</option>
+                                </select>
+                                <input type="hidden" class="input" name="filtro_tabla" value="<%- configuracion_lista.filtro_tabla %>">
+                            </div>
+                        <%}else if (configuracion_lista.filtro_tabla==="CUM") {%>
+                            <div class="items">
+                                <label class="label">CUM:</label>
+                                <input type="number" name="filtro_valor" value="<%- configuracion_lista.filtro_valor %>" class="input" min=0 max=10 step=0.01 maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <label class="label"> a </label>
+                                <input type="number" name="filtro_valor_f" value="<%- configuracion_lista.filtro_valor_f %>" class="input" min=0 max=10 step=0.01 maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <input type="hidden" class="input" name="filtro_tabla" value="<%- configuracion_lista.filtro_tabla %>">
+                            </div>
+                        <%}else if (configuracion_lista.filtro_tabla==="FechaCreacion") {%>
+                            <div class="items">
+                                <label class="label">Fecha Inicial:</label>
+                                <input type="date" name="filtro_valor" value="<%- configuracion_lista.filtro_valor %>" class="input" onkeydown="return false">
+                                <label class="label"> Final:</label>
+                                <input type="date" name="filtro_valor_f" value="<%- configuracion_lista.filtro_valor_f %>" class="input" onkeydown="return false">
+                                <input type="hidden" class="input" name="filtro_tabla" value="<%- configuracion_lista.filtro_tabla %>">
+                            </div>
+                        <%}%>
+                        <%if (configuracion_lista.filtro_tabla==="FechaCreacion" || configuracion_lista.filtro_tabla==="CUM") {%>
+                            <div class="items">
+                                <div class="items-inline">
+                                    <div class="item-inline">
+                                        <input class="radio" type="radio" id="A_to_Z" value="1" name="order_by" checked>
+                                        <label class="controler-order" for="A_to_Z"><i class="fas fa-sort-numeric-down"></i></label>
+                                    </div>
+                                    <div class="item-inline">
+                                        <input type="radio" id="Z_to_A" value="2" name="order_by">
+                                        <label class="controler-order" for="Z_to_A"><i class="fas fa-sort-numeric-down-alt"></i></label>
+                                    </div>
+                                    <div class="item-inline">
+                                        <button class="controler-btn" type="submit">
+                                            <i class="fas fa-search"></i>    
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <%}else{%>
+                            <div class="items">
+                                <div class="items-inline">
+                                    <div class="item-inline">
+                                        <button class="controler-btn" type="submit">
+                                            <i class="fas fa-search"></i>    
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <%}%>
+                    </form>
+                </div>
+                <div title="Vista Rejilla"><a href="#" id="grid" class="controler"><i class="fas fa-th"></i></a></div>
+                <div title="Vista en Lista" ><a href="#" id="list" class="controler" ><i class="fas fa-th-list"></i></a></div>
+                <div class="dropdown">
+                    <span title="Filtros" class="dropdown-title controler"><i class="fas fa-filter"></i></span>                
+                    <div class="dropdown-content">
+                        <a href="dashboard?filtro_tabla=Estado"><i class="fas fa-search"></i> Estado</a>
+                        <a href="dashboard?filtro_tabla=CUM"><i class="fas fa-search"></i> CUM</a>
+                        <a href="dashboard?filtro_tabla=Nombre_Rubro"><i class="fas fa-search"></i> Rubro</a>
+                        <a href="dashboard?filtro_tabla=FechaCreacion"><i class="fas fa-search"></i> Fechas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="#table_list">
+            <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Cum</th>
+                    <th scope="col">Rubro de Aplicacion</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha de Aplicacion</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for (var i = paginacion.fila_inicio; i < paginacion.fila_final; i++) {%>
+                    <tr>
+                        <td data-label="N°"><%- (i+1) %></td>
+                        <td data-label="Apellido"><%- filas[i].Apellido %></td>
+                        <td data-label="Nombre"><%- filas[i].Nombre %></td>
+                        <td data-label="CUM"><%- filas[i].CUM %></td>
+                        <td data-label="Rubro"><%- filas[i].Nombre_Rubro %></td>
+                        <% if (filas[i].Estado_Aplicacion === 1) { %>
+                            <td data-label="Estado">Pendiente</td>
+                        <% }else if(filas[i].Estado_Aplicacion === 2){ %>
+                            <td data-label="Estado">Aprobada</td>
+                        <% }else{ %>
+                            <td data-label="Estado">Rechazada</td>
+                        <% } %>
+                        <td data-label="Fecha"><%- filas[i].FechaCreacion %></td>
+                        <td class="acciones">
+                            <a id="Editar" class="modal-confirmar" href="applicant_action?id= <%- filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=-1"><i id="<%- filas[i].IDformulario %>" class="fas fa-edit"></i></a>
+                            <a id="Eliminar" class="modal-confirmar" href="applicant_action?id= <%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=-2"><i id="<%- filas[i].IDformulario %>" class="fas fa-times"></i></a>
+                            <a id="Abrir" class="modal-confirmar" href="applicant_action?id=<%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=0"><i id="<%- filas[i].IDformulario %>" class="far fa-folder-open"></i></a>
+                        </td>
+                    </tr>
+                <%}%> 
+                <tr>
+                    <td style="background:white;" colspan="8">
+                        <div class="box-items">
+                            <span class="table-footer">La tabla contiene la ultima informacion actualizada.</span>
+                                <div class="controlers-table">
+                                <%if(paginacion.pagina==1) { %>
+                                    <div><a href="<%- configuracion_lista.panel+"?pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler component-disable"><i class="fas fa-arrow-left"></i></a></div>
+                                <% }else{ %>
+                                    <div><a href="<%- configuracion_lista.panel+"?pag="+(paginacion.pagina-1)+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler"><i class="fas fa-arrow-left"></i></a></div>
+                                <% } %>    
+                                <%for (let i = 1; i <= paginacion.paginas_totales; i++) { %>
+                                    <%if(paginacion.pagina==i){%>
+                                        <div><a href="<%- configuracion_lista.panel+"?pag="+ i+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler component-actived"><%- i %></a></div>
+                                    <%}else{%>
+                                        <div><a href="<%- configuracion_lista.panel+"?pag="+ i+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler"><%- i %></a></div>
+                                    <% } %>
+                                <% } %>
+                                <%if(paginacion.pagina==paginacion.paginas_totales) { %>
+                                    <div><a href="<%- configuracion_lista.panel+"?pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler component-disable"><i class="fas fa-arrow-right"></i></i></a></div>
+                                <% }else{ %>
+                                    <div><a href="<%- configuracion_lista.panel+"?pag="+(paginacion.pagina+1)+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by%>" class="controler"><i class="fas fa-arrow-right"></i></i></a></div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </td>
+                </tr>            
+            </tbody>
+        </table>
+    </div>
+<% }else{%>    
+    <div class="no-data">
+        <div class="img-not-found"></div>
+        <p class="legend-no-data">Upsss! No tienes aplicaciones a becas <%-data_user.Nombre.split(' ')[0]+" "+data_user.Apellido.split(' ')[0]%>aun.</p>
+    </div>
+<% } %>

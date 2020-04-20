@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body translate="no">
+    <div class="front-view">
+        <%- include('partials/navegation_bars',{data_user: data_user})%>
+        <section class="dashboard">
+            <% if (data_user.Nivel === 1) { %>
+                <% if (configuracion_lista.panel == "dashboard") {%>
+                    <%- include('partials/user_history_applicants',{filas: filas, data_user: data_user ,configuracion_lista: configuracion_lista, paginacion: paginacion});%>
+                <% }else if(configuracion_lista.panel == "add_applicant"){ %>
+                    <%- include('partials/add_applicant',{data_user: data_user}); %>
+                <% }else if(configuracion_lista.panel == "maintenance"){ %>
+                    <%- include('partials/maintenance'); %>
+                <% }else if(configuracion_lista.panel == "maintenance"){ %>
+                    <%- include('partials/maintenance'); %>
+                <% }else if(configuracion_lista.panel == "applicant_view"){ %>
+                    <%- include('partials/applicant_view', {data_user: data_user, filas: filas, imageTest: imageTest}); %>
+                <% }else{ %>
+                    <%- include('partials/info_box'); %>
+                <% } %>
+            <% }else if(data_user.Nivel === 2){ %>
+                <% if (configuracion_lista.panel == "dashboard") {%>
+                    <%- include('partials/table_list_applicants',{filas: filas, configuracion_lista: configuracion_lista, paginacion: paginacion});%>
+                <% }else if(configuracion_lista.panel == "approve_list"){ %>
+                    <%- include('partials/approve_list',{filas: filas, configuracion_lista: configuracion_lista, paginacion: paginacion});%>
+                <% }else  if(configuracion_lista.panel == "deny_list"){ %>
+                    <%- include('partials/deny_list',{filas: filas, configuracion_lista: configuracion_lista, paginacion: paginacion}); %>
+                <% }else if(configuracion_lista.panel == "pre_approve_list"){ %>
+                    <%- include('partials/pre_approve_list',{filas: filas, configuracion_lista: configuracion_lista, paginacion: paginacion}); %>
+                <% }else if(configuracion_lista.panel == "maintenance"){ %>
+                    <%- include('partials/maintenance'); %>
+                <% }else if(configuracion_lista.panel == "configuration"){ %>
+                    <%- include('partials/maintenance'); %>
+                <% }else  if(configuracion_lista.panel == "reports"){ %>
+                    <%- include('partials/reports', {data_user: data_user}); %>
+                <% }else if(configuracion_lista.panel == "applicant_view"){ %>
+                    <%- include('partials/applicant_view', {data_user: data_user, filas: filas, imageTest: imageTest}); %>
+                <% }else{ %>
+                    <%- include('partials/info_box'); %>
+                <% } %>
+            <%}%>
+        </section>
+        <% if (false) { %>
+            <%- include('partials/btns_float', {data_user: data_user, filas: filas}); %>
+        <% } %>
+    </div>
+    <%- include('partials/modal', {panel: configuracion_lista.panel}); %>
+</body>
+</html>

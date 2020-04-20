@@ -1,0 +1,499 @@
+<form action="sign_in" method="POST" name="application_form">
+        <div class="wrapper">
+          <div class="container">
+            <div class="title">Ingresa tus Datos</div>
+            <div class="input-form" id="part-1">
+                <div class="input-form-title"> I-) Datos Personales.</div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Nombres:</label>
+                        <input type="text" class="input" name="nombreUsuario" maxlength="50" placeholder="Nombres">
+                    </div>                
+                    <div class="items">
+                        <label class="label">Apellidos:</label>
+                        <input type="text" class="input" name="apellidoUsuario" maxlength="50" placeholder="Apellidos">
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Fecha de Nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" class="input">
+                    </div>                
+                    <div class="items">
+                        <label class="label">N° de Carnet:</label>
+                        <input type="text" class="input" name="carnet" maxlength="10" placeholder="0000000000">
+                    </div>
+                    <div class="items">
+                        <label class="label">Carrera:</label>
+                        <select class="input" name="carrera">
+                            <option value="0">Seleccione su Carrera</option>
+                            <option value="1">Ing. Sistemas & Computacion</option>
+                            <option value="2">Ing. Sistemas & Computacion</option>
+                            <option value="3">Ing. Sistemas & Computacion</option>
+                            <option value="4">Ing. Sistemas & Computacion</option>
+                            <option value="5">Ing. Sistemas & Computacion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items-ai">
+                        <label class="label">Direccion Particular:</label>
+                        <input type="text" class="input" name="direccion" maxlength="500" placeholder="Direccion Particular...">
+                    </div>
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>Sexo:</p>
+                            <div>
+                                <input type="radio" id="Masculino" value="1" name="radio_sexo" checked>
+                                <label for="Masculino">Masculino</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Femenino" value="2" name="radio_sexo">
+                                <label for="Femenino">Femenino</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Edad:</label>
+                        <input type="number" class="input" name="edadU" maxlength="3" placeholder="0">
+                    </div>
+                    <div class="items">
+                        <label class="label">Numero de DUI:</label>
+                        <input type="text" class="input" name="DUI" maxlength="10" placeholder="Numero de DUI">
+                    </div>                
+                    <div class="items">
+                        <label class="label">Numero de NIT:</label>
+                        <input type="text" class="input" name="NIT" maxlength="17" placeholder="Numero de NIT">
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Email:</label>
+                        <input type="email" class="input" name="email" maxlength="50" placeholder="Email@mail.com">
+                    </div>
+                    <div class="items">
+                        <label class="label">Password:</label>
+                        <input type="password" class="input" name="password" maxlength="100" placeholder="Password">
+                    </div>
+                    <div class="items">
+                        <label class="label">Ciclo Actual que cursa:</label>
+                        <select class="input" name="Ciclo">
+                            <option selected value="0">Seleccione una Opcion</option>
+                            <option value="1">Primer Ciclo</option>
+                            <option value="2">Segundo Ciclo</option>
+                            <option value="3">Tercer Ciclo</option>
+                            <option value="4">Cuarto Ciclo</option>
+                            <option value="5">Quinto Ciclo</option>
+                            <option value="6">Sexto Ciclo</option>
+                            <option value="7">Septimo Ciclo</option>
+                            <option value="8">Octavo Ciclo</option>
+                            <option value="9">Noveno Ciclo</option>
+                            <option value="10">Decimo Ciclo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Telefono:</label>
+                        <input type="tel" class="input" name="telefonoUsuario" maxlength="8" placeholder="2222-2222">
+                    </div>                
+                    <div class="items">
+                        <label class="label">Celular:</label>
+                        <input type="tel" class="input" name="celularUsuario" maxlength="8" placeholder="7777-7777">
+                    </div>                
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>Tipo de Contrato:</p>
+                            <div>
+                                <input type="radio" id="Linea" value="1" name="radio_contrato_celular" checked>
+                                <label for="Linea">Linea</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Post" value="2" name="radio_contrato_celular">
+                                <label for="Post">Post-pago</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4">                
+                    <div class="items">
+                        <label class="label">Numero de hijos:</label>
+                        <input type="number" maxlength="1" class="input" name="numeroHijos" placeholder="Numero de hijos">
+                    </div>
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>Estado Civil:</p>
+                            <div>
+                                <input type="radio" id="Soltero" value="1" name="radio_estado_civil" checked>
+                                <label for="Soltero">Soltero.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Casado" value="2" name="radio_estado_civil">
+                                <label for="Casado">Casado.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Divorciado" value="3" name="radio_estado_civil">
+                                <label for="Divorciado">Divorciado.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>El Solicitante vive en casa:</p>
+                            <div>
+                                <input type="radio" id="Alquilada" value="1" name="radio_tipo_casa" checked>
+                                <label for="Alquilada">Alquilada</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Propia" value="2" name="radio_tipo_casa">
+                                <label for="Propia">Propia</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">CUM General:</label>
+                        <input type="text" class="input" name="CUM" maxlength="4" placeholder="10.0">
+                    </div>
+                    <div class="items">
+                        <label class="label">Rubro de la Beca:</label>
+                        <select class="input" name="RubroBeca">
+                            <option selected value="0">Seleccione una Opcion</option>
+                            <option value="1">Academica</option>
+                            <option value="2">Fundadores</option>
+                        </select>
+                    </div>
+                    <div class="items">
+                        <label class="label">Adjuntar constancia de Notas:</label>
+                        <input type="file" class="input" name="ConstanciaNotas" placeholder="Cargo que desempeña.">
+                    </div>
+                </div>
+                <div class="section-1">
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>El Solicitante vive con:</p>
+                            <div>
+                                <input type="radio" id="Padre" value="1" name="radio_familia" checked>
+                                <label for="Padre">Padre.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Madre" value="2" name="radio_familia">
+                                <label for="Madre">Madre.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Padre_Madre" value="3" name="radio_familia">
+                                <label for="Padre_Madre">Padre y Madre.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Hemano" value="4" name="radio_familia">
+                                <label for="Hemano">Hemano/a.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Independiente" value="5" name="radio_familia">
+                                <label for="Independiente">Independiente.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Conyuge" value="6" name="radio_familia">
+                                <label for="Conyuge">Conyuge.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Pupilaje" value="7" name="radio_familia">
+                                <label for="Pupilaje">Pupilaje.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="OtrosFamiliares" value="8" name="radio_familia">
+                                <label for="OtrosFamiliares">Otros familiares.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider">
+            </div>
+            <div class="input-form" id="part-2">
+                <div class="input-form-title">
+                    II-) Datos de los Padres.
+                    <span class="legend">Informacion: Si usted es una persona que vive con sus padres (ambos o solo papa/mama) llenar los datos referentes a ellos, si no pasar al paso III.</span>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Nombres del Padre:</label>
+                        <input type="text" class="input" name="PadreNU" maxlength="50" placeholder="Nombres">
+                    </div>                
+                    <div class="items">
+                        <label class="label">Apellidos del Padre:</label>
+                        <input type="text" class="input" name="PadreAU" maxlength="50" placeholder="Apellidos">
+                    </div>
+                </div>
+                <div class="section-2">
+                    <div class="items">
+                        <label class="label">Profesion u Oficio:</label>
+                        <input type="text" class="input" name="TrabajoPU" maxlength="100" placeholder="Profesion u Oficio">
+                    </div>
+                </div>
+                <div class="section-2">
+                    <div class="items">
+                        <label class="label">Lugar de Trabajo:</label>
+                        <input type="text" class="input" name="LugarTrabajoPU" maxlength="100" placeholder="Lugar de Trabajo">
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Telefono del Trabajo:</label>
+                        <input type="phone" class="input" name="TelefonoTPU" maxlength="8" placeholder="2222-2222">
+                    </div>
+                    <div class="items">
+                        <label class="label">Telefono de Residencia:</label>
+                        <input type="phone" class="input" name="TelefonoRPU" maxlength="8" placeholder="2222-2222">
+                    </div>
+                    <div class="items">
+                            <label class="label">Numero de Celular:</label>
+                            <input type="phone" class="input" name="CelularPU" maxlength="8" placeholder="7777-7777">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Nombres de la Madre:</label>
+                        <input type="text" class="input" name="MadreNU" maxlength="50" placeholder="Nombres">
+                    </div>                
+                    <div class="items">
+                        <label class="label">Apellidos de la Madre:</label>
+                        <input type="text" class="input" name="MadreAU" maxlength="50" placeholder="Apellidos">
+                    </div>
+                </div>
+                <div class="section-2">
+                    <div class="items">
+                        <label class="label">Profesion u Oficio:</label>
+                        <input type="text" class="input" name="TrabajoMU" maxlength="100" placeholder="Profesion u Oficio">
+                    </div>
+                </div>
+                <div class="section-2">
+                    <div class="items">
+                        <label class="label">Lugar de Trabajo:</label>
+                        <input type="text" class="input" name="LugarTrabajoMU" maxlength="100" placeholder="Lugar de Trabajo">
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items">
+                        <label class="label">Telefono del Trabajo:</label>
+                        <input type="phone" class="input" name="TelefonoTMU" maxlength="8" placeholder="2222-2222">
+                    </div>
+                    <div class="items">
+                        <label class="label">Telefono de Residencia:</label>
+                        <input type="phone" class="input" name="TelefonoRMU" maxlength="8" placeholder="2222-2222">
+                    </div>
+                    <div class="items">
+                            <label class="label">Numero de Celular:</label>
+                            <input type="phone" class="input" name="CelularMU" maxlength="8" placeholder="7777-7777">
+                    </div>
+                </div>
+                <hr class="divider">
+            </div>
+            <div class="input-form" id="part-3">
+                <div class="input-form-title">
+                    III-) Datos laborales del Solicitante.
+                    <span class="legend">Informacion: Si usted no trabaja aun marcar que NO y por favor seguir al paso IV.</span>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>Usted Trabaja:</p>
+                            <div>
+                                <input type="radio" id="Trabaja-Si" value="1" name="radio_trabaja" checked>
+                                <label for="Trabaja-Si">SI</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Trabaja-No" value="2" name="radio_trabaja">
+                                <label for="Trabaja-No">NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-4">
+                    <div class="items-ai">
+                        <label class="label">Lugar donde trabaja:</label>
+                        <input type="text" class="input" name="LugarTU" maxlength="100" placeholder="Lugar donde Trabaja">
+                    </div>
+                    <div class="items">
+                        <label class="label">Telefono:</label>
+                        <input type="text" class="input" name="TelefonoLugarTU" maxlength="100" placeholder="2222-2222">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Tiempo de trabajar en la empresa:</label>
+                        <select class="input" name="TiempoTrabajando">
+                            <option selected value="0">Seleccione una Opcion</option>
+                            <option value="1">Menos de un Año</option>
+                            <option value="2">Mas de un Año</option>
+                            <option value="3">Entre un Año y Dos</option>
+                            <option value="4">Mas de dos Años</option>
+                            <option value="5">Entre dos Años y Tres</option>
+                            <option value="6">Mas de Tres Años</option>
+                            <option value="7">Entre tres Años y Cuatro</option>
+                            <option value="8">Mas de Cuatro Años</option>
+                            <option value="9">Entre cuatro Años y Cinco</option>
+                            <option value="10">Mas de Cinco Años</option>
+                        </select>
+                    </div>
+                    <div class="items">
+                        <label class="label">Salario Actual Aproximado:</label>
+                        <select class="input" name="SalarioAproximado">
+                            <option selected value="0">Seleccione una Opcion</option>
+                            <option value="1">Menos de $100 Mensuales.</option>
+                            <option value="2">Mas de $100 Mensuales.</option>
+                            <option value="3">Menos de $200 Mensuales.</option>
+                            <option value="4">Mas de $200 Mensuales.</option>
+                            <option value="5">Menos de $300 Mensuales.</option>
+                            <option value="6">Mas de $300 Mensuales.</option>
+                            <option value="7">Menos de $400 Mensuales.</option>
+                            <option value="8">Mas de $400 Mensuales.</option>
+                            <option value="9">Menos de $500 Mensuales.</option>
+                            <option value="10">Mas de $500 Mensuales.</option>
+                            <option value="11">Menos de $600 Mensuales.</option>
+                            <option value="12">Mas de $600 Mensuales.</option>
+                            <option value="13">Menos de $700 Mensuales.</option>
+                            <option value="14">Mas de $700 Mensuales.</option>
+                            <option value="15">Menos de $800 Mensuales.</option>
+                            <option value="16">Mas de $800 Mensuales.</option>
+                            <option value="17">Menos de $900 Mensuales.</option>
+                            <option value="18">Mas de $900 Mensuales.</option>
+                            <option value="19">Menos de $1000 Mensuales.</option>
+                            <option value="20">Mas de $1000 Mensuales.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Nombre de Jefe Inmediato:</label>
+                        <input type="text" class="input" name="NJIU" maxlength="100" placeholder="Nombre de Jefe Inmediato">
+                    </div>
+                    <div class="items">
+                        <label class="label">Numero de Telefono:</label>
+                        <input type="text" class="input" name="TelefonoNJIU" maxlength="8" placeholder="2222-2222">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Cargo que Usted desempeña:</label>
+                        <input type="text" class="input" name="PuestoTrabajoU" maxlength="100" placeholder="Cargo que desempeña.">
+                    </div>
+                    <div class="items">
+                        <label class="label">Numero de Telefono:</label>
+                        <input type="text" class="input" name="TelefonoPuestoTrabajoU" maxlength="20" placeholder="2222-2222">
+                    </div>
+                </div>
+                <div class="section-1">
+                    <div class="items">
+                        <label class="label">Adjuntar constancia de Sueldo:</label>
+                        <input type="file" class="input" name="ConstanciaSueldo" maxlength="20" placeholder="Cargo que desempeña.">
+                    </div>
+                </div>
+                <div class="section-1">
+                    <span class="legend" style="color: darkred; margin-bottom: 20px; padding: 0px;">Adjuntar constancia de Sueldo (Campo obligatorio para la realizacion del tramite).</span>
+                </div>
+                <hr class="divider">
+            </div>
+            <div class="input-form" id="part-4">
+                <div class="input-form-title">
+                    IV-) Estudios Realizados.
+                    <span class="legend">Informacion: Instituciones donde realizo sus estudios de educacion media, llenar solo campos necesarios.</span>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Educacion Basica:</label>
+                        <input type="text" class="input" name="EducacionBU" maxlength="100" placeholder="Educacion Basica">
+                    </div>
+                    <div class="items">
+                        <label class="label">Bachillerato:</label>
+                        <input type="text" class="input" name="EducacionMU" maxlength="100" placeholder="Bachillerato">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Tecnico:</label>
+                        <input type="text" class="input" name="EducacionTU" maxlength="100" placeholder="Tecnico">
+                    </div>
+                    <div class="items">
+                        <label class="label">Grado Universitario:</label>
+                        <input type="text" class="input" name="EducacionGUU" maxlength="100" placeholder="Grado Universitario">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <label class="label">Post Grado:</label>
+                        <input type="text" class="input" name="EducacionPGU" maxlength="100" placeholder="Post Grado">
+                    </div>
+                    <div class="items">
+                        <label class="label">Maestria:</label>
+                        <input type="text" class="input" name="EducacionMMU" maxlength="100" placeholder="Maestria">
+                    </div>
+                </div>
+                <div class="section-3">
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>¿Has realizado tu servicio Social?</p>
+                            <div>
+                                <input type="radio" id="Horas-Si" value="1" name="radio_horas" checked>
+                                <label for="Horas-Si">Si.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Horas-No" value="2" name="radio_horas">
+                                <label for="Horas-No">No.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <label class="label">¿Cuantas horas sociales has realizado?</label>
+                        <select class="input" name="HorasSociales">
+                            <option selected value="0">Seleccione una Opcion</option>
+                            <option value="1">Menos de 100 horas</option>
+                            <option value="2">Mas de 100 horas</option>
+                            <option value="3">Menos de 200 horas</option>
+                            <option value="4">Mas de 200 horas</option>
+                            <option value="5">Menos de 300 horas</option>
+                            <option value="6">Mas de 300 horas</option>
+                            <option value="7">Menos de 400 horas</option>
+                            <option value="8">Mas de 400 horas</option>
+                            <option value="9">Menos de 500 horas</option>
+                            <option value="10">Mas de 500 horas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="section-1">
+                    <div class="items">
+                        <div class="list-checkbox-inline">
+                            <p>¿Cual es su medio de transporte a la Universidad?</p>
+                            <div>
+                                <input type="radio" id="V-Propio" value="1" name="radio_transporte_U" checked>
+                                <label for="V-Propio">Vehiculo Propio.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Moto" value="2" name="radio_transporte_U">
+                                <label for="Moto">Motocicleta.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="T-Publico" value="3" name="radio_transporte_U">
+                                <label for="T-Publico">Transporte Publico.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="T-Privado" value="4" name="radio_transporte_U">
+                                <label for="T-Privado">Transporte Privado.</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="Ninguno" value="5" name="radio_transporte_U">
+                                <label for="Ninguno">Ninguno.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider">
+            </div>
+            <div class="container-btns">
+                <a href="index" class="btn">Cancelar</a>
+                <input type="submit" class="btn" value="Enviar">
+            </div>
+        </div>
+      </form>

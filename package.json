@@ -1,0 +1,30 @@
+{
+  "name": "API_RESFULL",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "convert-html-to-pdf": "^1.0.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "faker": "^4.1.0",
+    "html-pdf": "^2.2.0",
+    "html-to-pdf": "^0.1.11",
+    "ip": "^1.1.5",
+    "loader": "^2.1.1",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "mssql": "^6.0.1",
+    "nodemon": "^2.0.2"
+  }
+}

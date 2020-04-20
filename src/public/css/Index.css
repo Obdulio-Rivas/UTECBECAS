@@ -1,0 +1,253 @@
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+
+:root{
+  --main-color: rgb(171, 15, 30);
+  --main-hover-color: rgb(148, 15, 28);
+  --dashboard-bg: white;
+  --black: black;
+  --text-primary: #212121;
+  --legend: rgb(150, 150, 150);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: "open sans",sans-serif;
+}
+
+.section{
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+.section-row{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section-col{
+    flex: 50%;
+    height: 100vh;
+}
+
+.section-item{
+    position: relative;
+}
+
+.img{
+    min-height: 100vh;
+    min-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-image: url('../assets/index-banner.jpg');
+}
+
+.form-box{
+    max-width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: calc(70vh/4);
+    background: #fff;
+    padding: 20px 40px 30px;
+}
+
+.title{
+    display: block;
+    width: 100%;
+    color: #741313;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.msg-info{
+    display: block;
+    color: var(--legend);
+    padding: 0px 10px;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+.footer-form{
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.footer-form a{
+    text-decoration: none;
+}
+
+.input-group{
+    margin-bottom: 20px;
+}
+
+.input-group .label{
+    display: block;
+    widows: 100%;
+    font-size: 1em;
+    color: #212121;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.input-group .items{
+    margin-bottom: 20px;
+}
+  
+.input-group .items .input{
+    background: transparent;
+    border: 2px solid #BDBDBD;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.container-btns{
+    display: flex;
+    width: 100%;
+    padding: 10px 15px;
+    justify-content: space-between;
+}
+  
+.btn{
+    width: calc(100%*0.25);
+    max-width: 200px;
+    min-width: 150px;
+    background: #741313;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 0px;
+}
+
+.text-emphasis-1{
+    font-weight: 100;
+}
+.text-emphasis-2{
+    font-weight: 200;
+}
+.text-emphasis-3{
+    font-weight: 300;
+}
+.text-emphasis-4{
+    font-weight: 400;
+}
+.text-emphasis-5{
+    font-weight: 500;
+}
+
+.text-spacing{
+    letter-spacing: 0.25em
+}
+
+@media screen and (max-width:800px) {
+    
+    .hidden-on-movile{
+        display: none;
+    }
+    
+    .section-col{
+        flex: 100%;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 460px){
+
+    .section{
+        margin: 0px;
+    }
+
+    .section-item{
+        margin: 0px;
+    }
+
+    .section-row{
+        margin: 0px;
+    }
+
+    .section-col{
+        flex: 100%;
+        margin: 0px;
+    }
+
+    .hidden-on-movile{
+        display: none;
+    }
+
+    .form-box{
+        max-width: 80vw;
+        height: auto;
+        padding: 0px;
+    }
+
+    .input-group{
+        margin: 0px;
+    }
+
+    .items{
+        width: 100%;
+        margin: auto 0px;
+    }
+
+    .input{
+        display: block;
+        margin: auto;
+        position: relative;
+        max-width: calc(100%*0.909);
+    }
+
+    .input-group{
+        margin-bottom: 15px;
+    }
+
+    .title{
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .container-btns{
+        display: block;
+        max-width: calc(100%*0.909);
+    }
+
+    .btn{
+        display: block;
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn:last-child{
+        margin-bottom: 0px;
+    }
+
+    .footer-form{
+        font-size: 0.95em;
+        max-width: calc(100%*0.909);
+    }
+
+}

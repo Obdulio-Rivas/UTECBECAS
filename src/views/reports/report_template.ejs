@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/EstilosReportes.css">
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;900&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<% if ((filas.length-1)>0){%>
+	<div class="reporte">
+		<table class="tabla-reporte" style="border: 1px solid #ccc;">
+			<thead>
+				<tr style="background: orange;">
+					<th scope="col">N°</th>
+					<th scope="col">Apellidos</th>
+					<th scope="col">Nombres</th>
+					<th class="celda_centrada" scope="col">CUM</th>
+					<th scope="col">Rubro</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Aplico</th>
+					<th colspan="2" scope="col">Marcar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% 
+				var i = 0;
+				for (var j = 0; j < 100; j++) {%>
+					<tr>
+						<td data-label="N°"><%- j;%></td>
+						<td data-label="Apellido"><%- filas[i].Apellido %></td>
+						<td data-label="Nombre"><%- filas[i].Nombre %></td>
+						<td class="celda_centrada" data-label="CUM"><%- filas[i].CUM %></td>
+						<td data-label="Rubro"><%- filas[i].Nombre_Rubro %></td>
+						<% if (filas[i].Estado_Aplicacion === 1) { %>
+							<td class="celda_centrada" data-label="Estado">Pendiente</td>
+						<% }else if(filas[i].Estado_Aplicacion === 2){ %>
+							<td class="celda_centrada" data-label="Estado">Aprobada</td>
+						<% }else{ %>
+							<td class="celda_centrada" data-label="Estado">Rechazada</td>
+						<% } %>
+						<td class="celda_centrada" data-label="Fecha"><%- filas[i].FechaCreacion %></td>
+						<td class="marcar">
+							<span><i class="fas fa-times marca_denegado"></i></span>
+						</td>
+						<td class="marcar">
+							<span><i class="fas fa-check marca_aprobado"></i></span>
+						</td>
+					</tr>
+				<%}%>          
+			</tbody>
+		</table>
+	</div>
+<%}%>
+</body>
