@@ -10,7 +10,8 @@ var dbConfig = {
     database: database,
     user: user,
     password: pwr,
-    port: port
+    port: port,
+    encrypt: true,
 };
 
 module.exports = dbConfig;
