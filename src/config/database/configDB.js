@@ -1,8 +1,8 @@
 //Configuraciones de la Base Datos.
-var server = "LOCALHOST\\MSSQLOBDULIO"; 
+var server = "tcp:becas-utec.database.windows.net";//"LOCALHOST\\MSSQLOBDULIO"; 
 var database = "SISTEMA_DE_BECAS";
-var user = "sa";
-var pwr = "sa1234";
+var user = "grupo01";
+var pwr = "Sa123456";
 var port = 1433;
 
 var dbConfig = {
