@@ -1,9 +1,11 @@
 $(document).ready(function(){
-    //(123) 456-7890
+    //Formateo de Campos.
+    //Formulario Crear Usuario.
     $('input[type=tel]').mask("(999) 9999-9999",{placeholder:""});
     $('input[name=DUI]').mask("99999999-9",{placeholder:""});
     $('input[name=NIT]').mask("9999-999999-999-9",{placeholder:""});
     $('input[name=carnet]').mask("99-9999-9999",{placeholder:""});
+    //Formulario Aplicar a Beca.
 
     function probadorCampos(tag){
         console.log($("input[name='"+tag+"']").val());
@@ -27,8 +29,6 @@ $(document).ready(function(){
         var valor = objecto.val();
         var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var regOficial = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-      
-        //Se muestra un texto a modo de ejemplo, luego va a ser un icono
         if (reg.test(valor) && regOficial.test(valor)) {
             objecto.siblings("p").remove();
             return true;
@@ -45,8 +45,7 @@ $(document).ready(function(){
     function validarPassword(tag){
         var objecto = $("input[name='"+tag+"']");
         var valor = objecto.val();
-        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,16}$/;;
-        //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,16}$/;
         if (regex.test(valor)) {
             objecto.siblings("p").remove();
             return true;
@@ -76,18 +75,22 @@ $(document).ready(function(){
         }
     }
 
-    function validarNumTelefonico(tag){
+    function validarNumTelefonico(tag, noValidarOpcion){
         var objecto = $("input[name='"+tag+"']");
         var valor = objecto.val();
         console.log(valor);
         var regex = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{4}[-\s\.]{0,1}[0-9]{4}$/;
-        if (regex.test(valor)) {
-            objecto.siblings("p").remove();
+        if(noValidarOpcion){
+            if (regex.test(valor)) {
+                objecto.siblings("p").remove();
+                return true;
+            } else {
+                objecto.siblings("p").remove();
+                objecto.after('<p class="advertencia" style="color: red;">Formato de Telefono incorrecto.<p>');
+                return false;
+            }
+        }else{
             return true;
-        } else {
-            objecto.siblings("p").remove();
-            objecto.after('<p class="advertencia" style="color: red;">Formato de Telefono incorrecto.<p>');
-            return false;
         }
     }
 
@@ -151,20 +154,45 @@ $(document).ready(function(){
         }
     }
 
-    $(".submit").click(function(){
-        var token = false;
-        //Obtener el valor del objeto.
-        probadorCampos("fechaNacimiento");
+    function submitCrearUsuario(){
         //Validamos que los campos no esten vacios.
         if(validarCampoVacio('nombreUsuario') && validarCampoVacio('apellidoUsuario') && validarCampoVacio('fechaNacimiento')
         && validarNumCarnet('carnet') && validarSeleccion('carrera') && validarCampoVacio('direccion')
         && validarCampoNumerico('edadU',15,70,'edad') && validarNumDUI('DUI') && validarNumNIT('NIT')
         && validarEmail('email') && validarPassword('password') && validarSeleccion('Ciclo')
-        && validarCampoNumerico('CUM',0,10,'CUM') && validarNumTelefonico('telefonoUsuario')
-        && validarNumTelefonico('celularUsuario')){
+        && validarCampoNumerico('CUM',0,10,'CUM') && validarNumTelefonico('telefonoUsuario', false)
+        && validarNumTelefonico('celularUsuario', true)){
             return true;
         }else{
             return false;
         }
-    })
+    }
+
+    function submitAplicarBeca(){
+        //Validamos que los campos no esten vacios.
+        if(true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    $('.submitCrearUsuario').click(function(){
+        //Validamos que los campos no esten vacios.
+        if(validarCampoVacio('nombreUsuario') && validarCampoVacio('apellidoUsuario') && validarCampoVacio('fechaNacimiento')
+        && validarNumCarnet('carnet') && validarSeleccion('carrera') && validarCampoVacio('direccion')
+        && validarCampoNumerico('edadU',15,70,'edad') && validarNumDUI('DUI') && validarNumNIT('NIT')
+        && validarEmail('email') && validarPassword('password') && validarSeleccion('Ciclo')
+        && validarCampoNumerico('CUM',0,10,'CUM') && validarNumTelefonico('telefonoUsuario', false)
+        && validarNumTelefonico('celularUsuario', true)){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+    $('.submitAplicarBeca').click(function(){
+        submitAplicarBeca();
+    });
+
 });
