@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('input[type=tel]').mask("(999) 9999-9999",{placeholder:""});
     $('input[name=DUI]').mask("99999999-9",{placeholder:""});
     $('input[name=NIT]').mask("9999-999999-999-9",{placeholder:""});
+    $('input[name=carnet]').mask("99-9999-9999",{placeholder:""});
 
     function probadorCampos(tag){
         console.log($("input[name='"+tag+"']").val());
@@ -44,7 +45,7 @@ $(document).ready(function(){
     function validarPassword(tag){
         var objecto = $("input[name='"+tag+"']");
         var valor = objecto.val();
-        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,16}$/;
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,16}$/;;
         //Se muestra un texto a modo de ejemplo, luego va a ser un icono
         if (regex.test(valor)) {
             objecto.siblings("p").remove();
@@ -90,6 +91,51 @@ $(document).ready(function(){
         }
     }
 
+    function validarNumCarnet(tag){
+        var objecto = $("input[name='"+tag+"']");
+        var valor = objecto.val();
+        console.log(valor);
+        var regex = /^[0-9]{2}[-]{0,1}[0-9]{4}[-]{0,1}[0-9]{4}$/;
+        if (regex.test(valor)) {
+            objecto.siblings("p").remove();
+            return true;
+        } else {
+            objecto.siblings("p").remove();
+            objecto.after('<p class="advertencia" style="color: red;">Formato de carnet incorrecto.<p>');
+            return false;
+        }
+    }
+
+    function validarNumDUI(tag){
+        var objecto = $("input[name='"+tag+"']");
+        var valor = objecto.val();
+        console.log(valor);
+        var regex = /^[0-9]{8}[-]{0,1}[0-9]{1}$/;
+        if (regex.test(valor)) {
+            objecto.siblings("p").remove();
+            return true;
+        } else {
+            objecto.siblings("p").remove();
+            objecto.after('<p class="advertencia" style="color: red;">Formato de DUI incorrecto.<p>');
+            return false;
+        }
+    }
+    
+    function validarNumNIT(tag){
+        var objecto = $("input[name='"+tag+"']");
+        var valor = objecto.val();
+        console.log(valor);
+        var regex = /^[0-9]{4}[-]{0,1}[0-9]{6}[-]{0,1}[0-9]{3}[-]{0,1}[0-9]{1}$/;
+        if (regex.test(valor)) {
+            objecto.siblings("p").remove();
+            return true;
+        } else {
+            objecto.siblings("p").remove();
+            objecto.after('<p class="advertencia" style="color: red;">Formato de NIT incorrecto.<p>');
+            return false;
+        }
+    }
+
     function validarSeleccion(tag){
         var objecto = $("#"+tag);
         var x = document.getElementById(tag).selectedIndex;
@@ -110,9 +156,12 @@ $(document).ready(function(){
         //Obtener el valor del objeto.
         probadorCampos("fechaNacimiento");
         //Validamos que los campos no esten vacios.
-        if(/*validarCampoVacio('nombreUsuario') && validarCampoVacio('apellidoUsuario') && validarEmail('email')
-        && validarSeleccion('Ciclo') && validarPassword('password') && validarCampoNumerico('edadU',15,70,'edad')
-        &&*/ validarNumTelefonico('telefonoUsuario')){
+        if(validarCampoVacio('nombreUsuario') && validarCampoVacio('apellidoUsuario') && validarCampoVacio('fechaNacimiento')
+        && validarNumCarnet('carnet') && validarSeleccion('carrera') && validarCampoVacio('direccion')
+        && validarCampoNumerico('edadU',15,70,'edad') && validarNumDUI('DUI') && validarNumNIT('NIT')
+        && validarEmail('email') && validarPassword('password') && validarSeleccion('Ciclo')
+        && validarCampoNumerico('CUM',0,10,'CUM') && validarNumTelefonico('telefonoUsuario')
+        && validarNumTelefonico('celularUsuario')){
             return true;
         }else{
             return false;
