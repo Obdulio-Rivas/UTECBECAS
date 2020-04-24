@@ -98,11 +98,11 @@
                 <div class="dropdown">
                     <span title="Filtros" class="dropdown-title controler"><i class="fas fa-filter"></i></span>                
                     <div class="dropdown-content">
-                        <a href="dashboard?filtro_tabla=Apellido"><i class="fas fa-search"></i> Apellidos</a>
-                        <a href="dashboard?filtro_tabla=Nombre"><i class="fas fa-search"></i> Nombres</a>
-                        <a href="dashboard?filtro_tabla=CUM"><i class="fas fa-search"></i> CUM</a>
-                        <a href="dashboard?filtro_tabla=Nombre_Rubro"><i class="fas fa-search"></i> Rubro</a>
-                        <a href="dashboard?filtro_tabla=FechaCreacion"><i class="fas fa-search"></i> Fechas</a>
+                        <a href="approve_list?filtro_tabla=Apellido"><i class="fas fa-search"></i> Apellidos</a>
+                        <a href="approve_list?filtro_tabla=Nombre"><i class="fas fa-search"></i> Nombres</a>
+                        <a href="approve_list?filtro_tabla=CUM"><i class="fas fa-search"></i> CUM</a>
+                        <a href="approve_list?filtro_tabla=Nombre_Rubro"><i class="fas fa-search"></i> Rubro</a>
+                        <a href="approve_list?filtro_tabla=FechaCreacion"><i class="fas fa-search"></i> Fechas</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                         <td class="acciones">
                             <a id="Aprobar Cheque" class="modal-confirmar" href="applicant_action?id= <%- filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=5"><i id="<%- filas[i].IDformulario %>" class="fas fa-money-check-alt"></i></a>
                             <a id="Denegar" class="modal-confirmar" href="applicant_action?id= <%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=3"><i id="<%- filas[i].IDformulario %>" class="fas fa-minus-circle"></i></a>
-                            <a id="Denegar" class="modal-confirmar" href="applicant_action?id= <%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=6"><i id="<%- filas[i].IDformulario %>" class="far fa-calendar-minus"></i></a>
+                            <a id="Penalizar al Estudiante" class="modal-confirmar" href="applicant_action?id= <%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=6"><i id="<%- filas[i].IDformulario %>" class="far fa-calendar-minus"></i></a>
                             <a id="Abrir" class="modal-confirmar" href="applicant_action?id=<%-  filas[i].IDformulario+"&pag="+paginacion.pagina+"&filtro_tabla="+configuracion_lista.filtro_tabla+"&filtro_valor="+configuracion_lista.filtro_valor+"&filtro_valor_f="+configuracion_lista.filtro_valor_f+"&order_by="+configuracion_lista.order_by %>&action=0"><i id="<%- filas[i].IDformulario %>" class="far fa-folder-open"></i></a>
                         </td>
                     </tr>
