@@ -24,6 +24,17 @@ $(document).ready(function(){
         objecto.siblings("p").remove();
     }
 
+    function limpiarCamposSeccion(tag){
+        var objectos = $("#"+tag).find('.input');
+        objectos.each(function() {
+            if($(this).get(0).tagName=="SELECT"){
+                $(this).val('0');
+            }else{
+                $(this).val('');
+            }
+        });
+    }
+
     function validarCampoVacio(tag){
         var objecto = $("input[name='"+tag+"']");
         var valor = objecto.val();
@@ -178,6 +189,7 @@ $(document).ready(function(){
     $("input[name=radio_familia]").click(function () {
         var tokenP = false;
         var tokenM = false;
+        limpiarCamposSeccion('part-2');
         var valor = $(this).val();
         if($(this).val()==1){
             //PAPA.
@@ -215,6 +227,7 @@ $(document).ready(function(){
 
     $("input[name=radio_trabaja]").click(function () {
         var token = false;
+        limpiarCamposSeccion('part-3');
         if($(this).val()==1){
             token = false;
         }else{
@@ -269,7 +282,6 @@ $(document).ready(function(){
             //Validamos el apartado numero 2
             if(obtenerValRdn('radio_familia')==1){
                 //Validamos los datos del padre.
-                alert('validando P');
                 if(validarCampoVacio('PadreNU') && validarCampoVacio('PadreAU') && validarCampoVacio('TrabajoPU') && 
                 validarCampoVacio('LugarTrabajoPU') && validarNumTelefonico('TelefonoTPU', true) && validarNumTelefonico('TelefonoRPU', true) &&
                 validarNumTelefonico('CelularPU', false)){
@@ -279,7 +291,6 @@ $(document).ready(function(){
                 }
             }else if(obtenerValRdn('radio_familia')==2){
                 //Validamos los datos de la madre.
-                alert('validando M');
                 if(validarCampoVacio('MadreNU') && validarCampoVacio('MadreAU') && validarCampoVacio('TrabajoMU') && 
                 validarCampoVacio('LugarTrabajoMU') && validarNumTelefonico('TelefonoTMU', true) && validarNumTelefonico('TelefonoRMU', true) &&
                 validarNumTelefonico('CelularMU', false)){
@@ -289,7 +300,6 @@ $(document).ready(function(){
                 }
             }else{
                 //Validamos los datos de ambos.
-                alert('validando A');
                 if(validarCampoVacio('PadreNU') && validarCampoVacio('PadreAU') && validarCampoVacio('TrabajoPU') && 
                 validarCampoVacio('LugarTrabajoPU') && validarNumTelefonico('TelefonoTPU', true) && validarNumTelefonico('TelefonoRPU', true) &&
                 validarNumTelefonico('CelularPU', false) && validarCampoVacio('MadreNU') && validarCampoVacio('MadreAU') && validarCampoVacio('TrabajoMU') && 
