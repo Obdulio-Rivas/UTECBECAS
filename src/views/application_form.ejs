@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/formSingIn.css">
-  <title>Becas UTEC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/formSingIn.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../javascript/Funciones/validaciones.js"></script>
+    <title>Becas UTEC</title>
 </head>
 <body>
   <form action="../new_applicant" method="POST" name="application_form">
@@ -13,15 +16,15 @@
       <div class="container">
         <div class="title">Ingresa tus Datos</div>
         <div class="input-form" id="part-1">
-            <div class="input-form-title"> I-) Datos Personales.</div>
+            <div class="input-form-title"> I-) Datos Personales para la Solicitud.</div>
             <div class="items">
                 <input type="hidden" value="<%-user_data[0].IDusuario%>" name="id_user">
                 <input type="hidden" value="<%-user_data[0].Carrera%>" name="carrera">
             </div>
             <div class="section-4">
                 <div class="items">
-                    <label class="label">Telefono Casa:</label>
-                    <input type="tel" class="input" name="celularUsuario" maxlength="8" placeholder="7777-7777">
+                    <label class="label">Numero de Contacto:</label>
+                    <input type="tel" class="input" name="celularUsuario" placeholder="(503) 7777-7777">
                 </div>
                 <div class="items">
                     <div class="list-checkbox-inline">
@@ -38,7 +41,7 @@
                 </div>
                 <div class="items">
                     <label class="label">Ciclo Actual que cursa:</label>
-                    <select class="input" name="Ciclo">
+                    <select class="input" name="Ciclo" id="Ciclo">
                         <option selected value="0">Seleccione una Opcion</option>
                         <option value="1">Primer Ciclo</option>
                         <option value="2">Segundo Ciclo</option>
@@ -96,7 +99,7 @@
                 </div>
                 <div class="items">
                     <label class="label">Rubro de la Beca:</label>
-                    <select class="input" name="RubroBeca">
+                    <select class="input" name="RubroBeca" id="RubroBeca">
                         <option selected value="0">Seleccione una Opcion</option>
                         <option value="1">Academica</option>
                         <option value="2">Fundadores</option>
@@ -178,15 +181,15 @@
             <div class="section-4">
                 <div class="items">
                     <label class="label">Telefono del Trabajo:</label>
-                    <input type="phone" class="input" name="TelefonoTPU" maxlength="8" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoTPU" placeholder="(503) 2222-2222">
                 </div>
                 <div class="items">
                     <label class="label">Telefono de Residencia:</label>
-                    <input type="phone" class="input" name="TelefonoRPU" maxlength="8" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoRPU" placeholder="(503) 2222-2222">
                 </div>
                 <div class="items">
                         <label class="label">Numero de Celular:</label>
-                        <input type="phone" class="input" name="CelularPU" maxlength="8" placeholder="7777-7777">
+                        <input type="tel" class="input" name="CelularPU" placeholder="(503) 7777-7777">
                 </div>
             </div>
             <div class="section-3">
@@ -214,15 +217,15 @@
             <div class="section-4">
                 <div class="items">
                     <label class="label">Telefono del Trabajo:</label>
-                    <input type="phone" class="input" name="TelefonoTMU" maxlength="8" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoTMU" placeholder="(503) 2222-2222">
                 </div>
                 <div class="items">
                     <label class="label">Telefono de Residencia:</label>
-                    <input type="phone" class="input" name="TelefonoRMU" maxlength="8" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoRMU" placeholder="(503) 2222-2222">
                 </div>
                 <div class="items">
-                        <label class="label">Numero de Celular:</label>
-                        <input type="phone" class="input" name="CelularMU" maxlength="8" placeholder="7777-7777">
+                    <label class="label">Numero de Celular:</label>
+                    <input type="tel" class="input" name="CelularMU" placeholder="(503) 7777-7777">
                 </div>
             </div>
             <hr class="divider">
@@ -254,13 +257,13 @@
                 </div>
                 <div class="items">
                     <label class="label">Telefono:</label>
-                    <input type="text" class="input" name="TelefonoLugarTU" maxlength="100" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoLugarTU" placeholder="(503) 2222-2222">
                 </div>
             </div>
             <div class="section-3">
                 <div class="items">
                     <label class="label">Tiempo de trabajar en la empresa:</label>
-                    <select class="input" name="TiempoTrabajando">
+                    <select class="input" name="TiempoTrabajando" id="TiempoTrabajando">
                         <option selected value="0">Seleccione una Opcion</option>
                         <option value="1">Menos de un Año</option>
                         <option value="2">Mas de un Año</option>
@@ -276,7 +279,7 @@
                 </div>
                 <div class="items">
                     <label class="label">Salario Actual Aproximado:</label>
-                    <select class="input" name="SalarioAproximado">
+                    <select class="input" name="SalarioAproximado" id="SalarioAproximado">
                         <option selected value="0">Seleccione una Opcion</option>
                         <option value="1">Menos de $100 Mensuales.</option>
                         <option value="2">Mas de $100 Mensuales.</option>
@@ -308,7 +311,7 @@
                 </div>
                 <div class="items">
                     <label class="label">Numero de Telefono:</label>
-                    <input type="text" class="input" name="TelefonoNJIU" maxlength="8" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoNJIU" placeholder="(503) 2222-2222">
                 </div>
             </div>
             <div class="section-3">
@@ -318,13 +321,13 @@
                 </div>
                 <div class="items">
                     <label class="label">Numero de Telefono:</label>
-                    <input type="text" class="input" name="TelefonoPuestoTrabajoU" maxlength="20" placeholder="2222-2222">
+                    <input type="tel" class="input" name="TelefonoPuestoTrabajoU" placeholder="(503) 2222-2222">
                 </div>
             </div>
             <div class="section-1">
                 <div class="items">
                     <label class="label">Adjuntar constancia de Sueldo:</label>
-                    <input type="file" class="input" name="ConstanciaSueldo" maxlength="20" placeholder="Cargo que desempeña.">
+                    <input type="file" class="input" name="ConstanciaSueldo">
                 </div>
             </div>
             <div class="section-1">
@@ -383,7 +386,7 @@
                 </div>
                 <div class="items">
                     <label class="label">¿Cuantas horas sociales has realizado?</label>
-                    <select class="input" name="HorasSociales">
+                    <select class="input" name="HorasSociales" id="HorasSociales">
                         <option selected value="0">Seleccione una Opcion</option>
                         <option value="1">Menos de 100 horas</option>
                         <option value="2">Mas de 100 horas</option>
