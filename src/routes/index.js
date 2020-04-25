@@ -43,7 +43,7 @@ router.all('/add_applicant', user_controller.btns_float_action);
 router.get('/applicant_action', user_controller.applicant_action);
 //Rutas de reportes.
 router.get('/report_test', report_controller.report_test);
-router.post('/report',report_controller.report_test);
+router.post('/report',report_controller.report_list);
 router.get('/report_download',report_controller.report_download);
 //Rutas de vistas de Maquetacion.
 router.get('/vistaReporte', (req,res)=>{res.render('../views/reports/report_template',{});});

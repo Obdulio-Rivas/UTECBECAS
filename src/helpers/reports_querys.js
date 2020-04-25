@@ -1,15 +1,18 @@
 const report_query = ((type_report, order_by, date) => {
-    var sql="SELECT F.IDformulario AS IDformulario, F.Estado AS Estado_Aplicacion, U.Nombre AS Nombre, U.Apellido AS Apellido, U.CUM AS CUM, R.Nombre_Rubro AS Nombre_Rubro, CONVERT(nvarchar, U.FechaCreacion, 103) AS FechaCreacion FROM dbo.Usuarios AS U INNER JOIN dbo.Formularios AS F ON U.IDusuario = F.IDUsuario INNER JOIN dbo.Rubro_Becas AS R ON F.IDrubros = R.IDrubro";;
+    var sql="SELECT F.IDformulario AS IDformulario, F.Estado AS Estado_Aplicacion, U.Nombre AS Nombre, U.Apellido AS Apellido, U.CUM AS CUM, R.Nombre_Rubro AS Nombre_Rubro, U.Carnet, CONVERT(nvarchar, U.FechaCreacion, 103) AS FechaCreacion FROM dbo.Usuarios AS U INNER JOIN dbo.Formularios AS F ON U.IDusuario = F.IDUsuario INNER JOIN dbo.Rubro_Becas AS R ON F.IDrubros = R.IDrubro";;
     var status = 0;
     switch (type_report) {
         case "Pendientes":
             status=1;
             break;
-        case "Aprobados":
+        case "PreAprobados":
             status=2;
             break;
         case "Denegados":
             status=3;
+            break;
+        case "Aprobados":
+            status=4;
             break;
         default:
             status = "Select 0";
