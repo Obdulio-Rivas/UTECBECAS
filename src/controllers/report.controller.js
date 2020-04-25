@@ -47,7 +47,7 @@ const report_list = (req, res) =>{
                 let options = {
                     "format": 'A4',
                     "border": {
-                        "top": "0cm",
+                        "top": "1cm",
                         "right": "1cm",
                         "bottom": "0.5cm",
                         "left": "1.5cm"
