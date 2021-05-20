@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "faker": "^4.1.0",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "html-to-pdf": "^0.1.11",
     "ip": "^1.1.5",
     "loader": "^2.1.1",
